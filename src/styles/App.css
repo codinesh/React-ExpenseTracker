@@ -43,6 +43,17 @@
 .expense {
   padding: 1em;
   margin: 1em;
-
   background-color: aquamarine;
+}
+
+.addexpense {
+  padding: 1em;
+  margin: 1em;
+  cursor: pointer;
+  background-color: cadetblue;
+}
+
+.addexpense:hover {
+  cursor: progress;
+  background-color: coral;
 }

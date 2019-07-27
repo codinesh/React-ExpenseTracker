@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react"
-
-interface IExpense {
-  date: Date
-  amount: number
-  mode: string
-}
+import logo from "../assets/logo.svg"
+import { IExpense } from "../common/interfaces/IExpense"
+import ExpenseDetail from "./Expense"
 
 interface IExpenseState {
   expenses: IExpense[]
@@ -35,14 +32,8 @@ const ExpenseList: React.FC = () => {
 
   return (
     <div className="container">
-      {initialdata.expenses.map((expense, i) => {
-        return (
-          <div className="expense">
-            <span>{expense.date.toDateString()}</span>
-            <p>{expense.amount}</p>
-            <span>{expense.mode}</span>
-          </div>
-        )
+      {expenses.expenses.map((expense, i) => {
+        return <ExpenseDetail test={expense} />
       })}
     </div>
   )
