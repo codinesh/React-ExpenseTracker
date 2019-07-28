@@ -1,21 +1,6 @@
-import React, { useEffect } from "react"
-import Header from "./Header"
-import Routes from "./Routes"
+import React, { useEffect } from "react";
+import Header from "./Header";
 
-const App: React.FC = () => {
-  useEffect(() => {
-    console.log("App useEffect")
-    return () => {
-      console.log("App useEffect cleanup ")
-    }
-  })
+const App = () => <Header title="Dinesh" />;
 
-  return (
-    <>
-      <Header title="Dinesh" />
-      <Routes />
-    </>
-  )
-}
-
-export default App
+export default App;

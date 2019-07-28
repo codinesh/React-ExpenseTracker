@@ -1,42 +1,44 @@
-import React, { useEffect, useState } from "react"
-import logo from "../assets/logo.svg"
-import { IExpense } from "../common/interfaces/IExpense"
-import ExpenseDetail from "./Expense"
+import React, { useEffect, useState } from "react";
+import { IExpense } from "../common/interfaces/IExpense";
+import ExpenseDetail from "./Expense";
+import AddExpense from "./AddExpense";
 
 interface IExpenseState {
-  expenses: IExpense[]
-  loading: boolean
+  expenses: IExpense[];
+  loading: boolean;
 }
 
 const ExpenseList: React.FC = () => {
-  const date = new Date()
+  const date = new Date();
   const initialdata: IExpenseState = {
     expenses: [
-      { date: date, amount: 98, mode: "QuickRide" },
+      { id: 1, date: date, amount: 98, mode: "QuickRide" },
       {
+        id: 2,
         date: new Date(),
         amount: 100,
         mode: "QuickRide"
       }
     ],
     loading: false
-  }
-  let [expenses, setExpenses] = useState<IExpenseState>(initialdata)
-
-  useEffect(() => {
-    console.log("ExpenseList useEffect")
-    return () => {
-      console.log("ExpenseList useEffect cleanup ")
-    }
-  })
+  };
+  let [expensesState, setExpenses] = useState<IExpenseState>(initialdata);
 
   return (
     <div className="container">
-      {expenses.expenses.map((expense, i) => {
-        return <ExpenseDetail test={expense} />
+      <AddExpense />
+      {expensesState.expenses.map((expense, i) => {
+        return (
+          <ExpenseDetail
+            id={expense.id}
+            date={expense.date}
+            amount={expense.amount}
+            mode={expense.mode}
+          />
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default ExpenseList
+export default ExpenseList;

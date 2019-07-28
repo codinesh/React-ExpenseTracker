@@ -1,20 +1,13 @@
-import React, { useEffect } from "react"
-import ExpenseList from "./ExpenseList"
+import React, { useEffect } from "react";
+import ExpenseList from "./ExpenseList";
 
 const Home = () => {
-  useEffect(() => {
-    console.log("Home useEffect")
-    return () => {
-      console.log("Home useEffect cleanup ")
-    }
-  })
-
   return (
     <>
-      <div>This is Home.</div>
+      <div className="ms-fabric">Expense List</div>
       <ExpenseList />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

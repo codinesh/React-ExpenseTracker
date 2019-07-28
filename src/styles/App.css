@@ -23,6 +23,15 @@
   color: white;
 }
 
+.body {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -40,20 +49,21 @@
   margin: 1em;
 }
 
-.expense {
+.expense,
+.addexpense {
+  max-height: 6em;
   padding: 1em;
   margin: 1em;
-  background-color: aquamarine;
+  background-color: cadetblue;
+  color: black;
 }
 
 .addexpense {
-  padding: 1em;
-  margin: 1em;
   cursor: pointer;
   background-color: cadetblue;
 }
 
 .addexpense:hover {
-  cursor: progress;
+  cursor: pointer;
   background-color: coral;
 }
