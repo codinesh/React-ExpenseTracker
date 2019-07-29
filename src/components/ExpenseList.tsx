@@ -24,9 +24,14 @@ const ExpenseList: React.FC = () => {
   };
   let [expensesState, setExpenses] = useState<IExpenseState>(initialdata);
 
+  const newExpense = (expense: IExpense) => {
+    let exp = [expense, ...expensesState.expenses];
+    setExpenses({ expenses: exp, loading: true });
+  };
+
   return (
     <div className="container">
-      <AddExpense />
+      <AddExpense onClick={newExpense} title="Hello AddExpense" />
       {expensesState.expenses.map((expense, i) => {
         return (
           <ExpenseDetail

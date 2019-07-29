@@ -17,8 +17,8 @@
   min-height: 8vh;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  align-items: initial;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
 }
