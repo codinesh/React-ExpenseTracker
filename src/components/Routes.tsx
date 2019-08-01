@@ -1,9 +1,7 @@
-import * as React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import * as React from "react"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
-import Home from "./Home";
-import About from "./About";
-import Contact from "./Contact";
+import Home from "./Home"
 
 const routes = [
   {
@@ -15,53 +13,27 @@ const routes = [
     path: "/Home",
     exact: true,
     sidebar: Home
-  },
-  {
-    path: "/About",
-    exact: true,
-    sidebar: About
-  },
-  {
-    path: "/Contact",
-    exact: true,
-    sidebar: Contact
   }
-];
+]
 
 const Routes: React.FC = () => {
   return (
     <Router>
-      <div className="body">
+      <div className="">
         <div
           style={{
             padding: "10px",
             height: "100%",
-            width: "10em",
+            width: "100%",
             background: "#f0f0f0"
           }}
         >
-          <ul style={{ listStyleType: "none", padding: 0 }}>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-          </ul>
+          <Link to="/">Home</Link>
+          <Link to="/about" />
+          <Link to="/contact" />
         </div>
 
-        <div
-          style={{
-            padding: "10px",
-            width: "100%",
-            height: "100%",
-            background: "#282c34",
-            color: "white"
-          }}
-        >
+        <div>
           {routes.map((route, index) => (
             <Route
               key={index}
@@ -73,7 +45,7 @@ const Routes: React.FC = () => {
         </div>
       </div>
     </Router>
-  );
-};
+  )
+}
 
-export default Routes;
+export default Routes
